@@ -1,0 +1,55 @@
+.createseries-wrapper {
+  /* width: 600px; */
+  max-width: 50%;
+  min-width: 350px;
+  margin: 0 auto;
+  height: 100vh
+}
+
+.createseries-title{
+  margin: 32px 0 16px;
+}
+
+.createseries-form{
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.createseries-button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; 
+}
+.btn{
+  cursor: pointer;
+  /* width: 100%; */
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.createseries-button-back{
+  border: 1px solid cyan;
+  color: cyan;
+  width: 100%;
+}
+
+.createseries-button-back:hover {
+  background-color: rgba(0, 255, 255, 0.511);
+  border: 1px solid white;
+  color: white;
+  transition: opacity 0.5s ease;
+}
+
+.createseries-button-add{
+  background: cyan;
+  width: 100%;
+}
+
+.createseries-button-add:hover {
+  background-color: rgb(137, 248, 248);
+  border: 1px solid black;
+  color: black;
+  transition: opacity 0.5s ease;
+}

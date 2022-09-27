@@ -4,15 +4,7 @@ import { useNavigate } from "react-router-dom";
 export function ListSeries() {
   const navigate = useNavigate();
 
-  const listaSerie = [
-    {
-      name: "The Handmais Tale",
-      date: "25-09-2022",
-      genre: "Drama",
-      review: "Muito boa",
-      image: "https://bancodeseries.com.br/images/posters/11942.jpg",
-    },
-  ];
+  const listaSerie = JSON.parse(localStorage.getItem('series')|| "[]");
 
   return (
     <div className="listseries-wrapper">
@@ -22,10 +14,15 @@ export function ListSeries() {
       >
         Adicionar Série
       </button>
+      
+      {!listaSerie.length ? (
+      <div className="text-message">
+        <p>Não há séries adicionadas</p>
+      </div>) : (
 
       <div className="series">
-        {listaSerie.map((serie) => (
-        <div className="card">
+        {listaSerie.map((serie, index) => (
+        <div className="card" key={index}>
           <div className="card-body">
             <img
               src={serie.image}
@@ -43,11 +40,7 @@ export function ListSeries() {
             </span>
           </div>
         </div>))}
-      </div>
-
-      <div className="text-message">
-        <p>Não há séries adicionadas</p>
-      </div>
+      </div>) }
     </div>
   );
 }
